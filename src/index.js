@@ -1,9 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app/index.js';
+import App from './components/app/index.jsx';
 
+const initialState = {
+  filmsList: [`Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`, `Titanic`],
+};
 
-ReactDOM.render(
-  <App />,
-  document.querySelector('#root'),
-);
+const actions = {
+  actionPlayFilm: () => {},
+};
+
+const init = () => {
+  return (<App filmsList={initialState.filmsList} actionPlayFilm={actions.actionPlayFilm} />);
+};
+
+ReactDOM.render(init(), document.querySelector(`#root`));
