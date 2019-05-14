@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
+import FilmsList from '../films-list/index.jsx';
 
 class App extends Component {
   render() {
@@ -123,17 +124,7 @@ class App extends Component {
               </li>
             </ul>
             <div className="catalog__movies-list">
-              {this.props.filmsList.map((filmName, index) => (
-                <article key={index} className="small-movie-card catalog__movies-card">
-                  <button className="small-movie-card__play-btn" type="button" onClick={this.props.actionPlayFilm}>Play</button>
-                  <div className="small-movie-card__image">
-                    <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175"/>
-                  </div>
-                  <h3 className="small-movie-card__title">
-                    <a className="small-movie-card__link" href="movie-page.html">{filmName}</a>
-                  </h3>
-                </article>
-              ))}
+              <FilmsList filmsList={this.props.filmsList} onPlayFilm={this.props.actionPlayFilm} />
             </div>
 
             <div className="catalog__more">

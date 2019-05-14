@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/index.jsx';
+import filmsList from './mocks/films';
 
 const initialState = {
-  filmsList: [`Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`, `Titanic`],
+  filmsList,
 };
 
 const actions = {
