@@ -1,18 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app/index.jsx';
-import filmsList from './mocks/films';
-
-const initialState = {
-  filmsList,
-};
-
-const actions = {
-  actionPlayFilm: () => {},
-};
+import Routes from './routes.js';
 
 const init = () => {
-  return <App filmsList={initialState.filmsList} actionPlayFilm={actions.actionPlayFilm} />;
+  return <Routes />;
 };
 
 ReactDOM.render(init(), document.querySelector(`#root`));

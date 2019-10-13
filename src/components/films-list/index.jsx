@@ -8,7 +8,7 @@ const FilmsList = ({ filmsList, onPlayFilm }) => {
       {filmsList &&
         filmsList.length &&
         filmsList.map((film, index) => (
-          <FilmCard key={index} name={film.name} img={film.img} onPlayFilm={onPlayFilm} sourceURL={film.sourceURL} />
+          <FilmCard key={index} id={index} name={film.name} img={film.img} onPlayFilm={onPlayFilm} sourceURL={film.sourceURL} />
         ))}
     </Fragment>
   );
