@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/index.jsx';
+import filmsList from './mocks/films';
 
 const initialState = {
-  filmsList: [`Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`, `Titanic`],
+  filmsList,
 };
 
 const actions = {
@@ -11,7 +12,7 @@ const actions = {
 };
 
 const init = () => {
-  return (<App filmsList={initialState.filmsList} actionPlayFilm={actions.actionPlayFilm} />);
+  return <App filmsList={initialState.filmsList} actionPlayFilm={actions.actionPlayFilm} />;
 };
 
 ReactDOM.render(init(), document.querySelector(`#root`));
