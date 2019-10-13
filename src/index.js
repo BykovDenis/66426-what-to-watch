@@ -12,7 +12,7 @@ const actions = {
 };
 
 const init = () => {
-  return (<App filmsList={initialState.filmsList} actionPlayFilm={actions.actionPlayFilm} />);
+  return <App filmsList={initialState.filmsList} actionPlayFilm={actions.actionPlayFilm} />;
 };
 
 ReactDOM.render(init(), document.querySelector(`#root`));

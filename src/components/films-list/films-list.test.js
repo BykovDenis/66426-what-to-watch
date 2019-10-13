@@ -1,12 +1,10 @@
 import React from 'react';
-import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import App from './index.jsx';
+import renderer from 'react-test-renderer';
+import FilmList from './index.jsx';
 
-Enzyme.configure({ adapter: new Adapter() });
-
-it(`App correctly renders after relaunch`, () => {
-  const initialState = {
+describe(`FilmList correctly renders after relaunch`, () => {
+  const props = {
+    onPlayFilm: jest.fn(),
     filmsList: [
       {
         name: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -61,9 +59,9 @@ it(`App correctly renders after relaunch`, () => {
     ],
   };
 
-  const clickHandler = jest.fn();
-  const app = mount(<App filmsList={initialState.filmsList} actionPlayFilm={clickHandler} />);
+  const tree = renderer.create(<FilmList {...props} />).toJSON();
 
-  const startButton = app.find(`.small-movie-card__play-btn`);
-  startButton.at(0).simulate(`click`, { preventDefault() {} });
+  it(`Component should render`, () => {
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -2,23 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function FilmCard(props) {
+  const { img, name, sourceURL } = props;
   return (
     <article className="small-movie-card catalog__movies-card">
-      <button className="small-movie-card__play-btn" type="button" onClick={props.onPlayFilm}>Play</button>
+      <button className="small-movie-card__play-btn" type="button" onClick={props.onPlayFilm}>
+        Play
+      </button>
       <div className="small-movie-card__image">
-        <img src={`img/${props.img.fileName}.${props.img.extension}`} alt={`${props.name}`}
-          width={props.img.width} height={props.img.height} />
+        {img && (
+          <img src={`img/${img.fileName}.${img.extension}`} alt={`${name}`} width={img.width} height={img.height} />
+        )}
       </div>
       <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href={`${props.sourceURL}`}>{props.name}</a>
+        <a className="small-movie-card__link" href={`${sourceURL}`}>
+          {name}
+        </a>
       </h3>
     </article>
   );
 }
 
 FilmCard.defaultProps = {
-  width: 280,
-  height: 175,
+  img: {
+    width: 280,
+    height: 175,
+  },
 };
 
 FilmCard.propTypes = {
@@ -30,7 +38,7 @@ FilmCard.propTypes = {
     width: PropTypes.number,
     height: PropTypes.number,
   }),
-  onPlayFilm: PropTypes.func,
-}
+  onPlayFilm: PropTypes.func.isRequired,
+};
 
 export default FilmCard;
