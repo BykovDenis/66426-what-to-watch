@@ -1,11 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { MemoryRouter } from 'react-router-dom';
 import App from './index.jsx';
 
 describe(`App correctly renders after relaunch`, () => {
   const initialState = {
     filmsList: [
       {
+        id: 0,
         name: `Fantastic Beasts: The Crimes of Grindelwald`,
         sourceURL: `movie-page.html`,
         img: {
@@ -16,6 +18,7 @@ describe(`App correctly renders after relaunch`, () => {
         },
       },
       {
+        id: 1,
         name: `Bohemian Rhapsody`,
         sourceURL: `movie-page.html`,
         img: {
@@ -26,6 +29,7 @@ describe(`App correctly renders after relaunch`, () => {
         },
       },
       {
+        id: 2,
         name: `Macbeth`,
         sourceURL: `movie-page.html`,
         img: {
@@ -36,6 +40,7 @@ describe(`App correctly renders after relaunch`, () => {
         },
       },
       {
+        id: 3,
         name: `Aviator`,
         sourceURL: `movie-page.html`,
         img: {
@@ -46,6 +51,7 @@ describe(`App correctly renders after relaunch`, () => {
         },
       },
       {
+        id: 4,
         name: `We need to talk about Kevin`,
         sourceURL: `movie-page.html`,
         img: {
@@ -58,7 +64,13 @@ describe(`App correctly renders after relaunch`, () => {
     ],
   };
 
-  const tree = renderer.create(<App filmsList={initialState.filmsList} />).toJSON();
+  const tree = renderer
+    .create(
+      <MemoryRouter initialEntries={['/']}>
+        <App filmsList={initialState.filmsList} />
+      </MemoryRouter>
+    )
+    .toJSON();
 
   it(`Component should render`, () => {
     expect(tree).toMatchSnapshot();

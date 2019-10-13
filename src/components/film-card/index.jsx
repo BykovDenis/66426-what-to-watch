@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function FilmCard(props) {
-  const { img, name, sourceURL, id} = props;
+  const { img, name, id } = props;
   return (
     <article className="small-movie-card catalog__movies-card">
       <button className="small-movie-card__play-btn" type="button" onClick={props.onPlayFilm}>

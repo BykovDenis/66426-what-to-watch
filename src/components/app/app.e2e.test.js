@@ -1,6 +1,7 @@
 import React from 'react';
 import Enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import { MemoryRouter } from 'react-router-dom';
 import App from './index.jsx';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -62,7 +63,11 @@ it(`App correctly renders after relaunch`, () => {
   };
 
   const clickHandler = jest.fn();
-  const app = mount(<App filmsList={initialState.filmsList} actionPlayFilm={clickHandler} />);
+  const app = mount(
+    <MemoryRouter initialEntries={['/']}>
+      <App filmsList={initialState.filmsList} actionPlayFilm={clickHandler} />
+    </MemoryRouter>
+  );
 
   const startButton = app.find(`.small-movie-card__play-btn`);
   startButton.at(0).simulate(`click`, { preventDefault() {} });

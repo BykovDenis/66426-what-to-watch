@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { MemoryRouter } from 'react-router-dom';
 import FilmList from './index.jsx';
 
 describe(`FilmList correctly renders after relaunch`, () => {
@@ -7,6 +8,7 @@ describe(`FilmList correctly renders after relaunch`, () => {
     onPlayFilm: jest.fn(),
     filmsList: [
       {
+        id: 0,
         name: `Fantastic Beasts: The Crimes of Grindelwald`,
         sourceURL: `movie-page.html`,
         img: {
@@ -17,6 +19,7 @@ describe(`FilmList correctly renders after relaunch`, () => {
         },
       },
       {
+        id: 1,
         name: `Bohemian Rhapsody`,
         sourceURL: `movie-page.html`,
         img: {
@@ -27,6 +30,7 @@ describe(`FilmList correctly renders after relaunch`, () => {
         },
       },
       {
+        id: 2,
         name: `Macbeth`,
         sourceURL: `movie-page.html`,
         img: {
@@ -37,6 +41,7 @@ describe(`FilmList correctly renders after relaunch`, () => {
         },
       },
       {
+        id: 3,
         name: `Aviator`,
         sourceURL: `movie-page.html`,
         img: {
@@ -47,6 +52,7 @@ describe(`FilmList correctly renders after relaunch`, () => {
         },
       },
       {
+        id: 4,
         name: `We need to talk about Kevin`,
         sourceURL: `movie-page.html`,
         img: {
@@ -59,7 +65,13 @@ describe(`FilmList correctly renders after relaunch`, () => {
     ],
   };
 
-  const tree = renderer.create(<FilmList {...props} />).toJSON();
+  const tree = renderer
+    .create(
+      <MemoryRouter initialEntries={['/film/0']}>
+        <FilmList {...props} />
+      </MemoryRouter>
+    )
+    .toJSON();
 
   it(`Component should render`, () => {
     expect(tree).toMatchSnapshot();
