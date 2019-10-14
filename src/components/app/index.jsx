@@ -1,8 +1,16 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent, Fragment } from 'react';
 import FilmsList from '../films-list/index.jsx';
+import filmsList from '../../mocks/films';
 
-class App extends Component {
+const initialState = {
+  filmsList,
+};
+
+const actions = {
+  actionPlayFilm: () => {},
+};
+
+class App extends PureComponent {
   render() {
     return (
       <Fragment>
@@ -198,7 +206,7 @@ class App extends Component {
               </li>
             </ul>
             <div className="catalog__movies-list">
-              <FilmsList filmsList={this.props.filmsList} onPlayFilm={this.props.actionPlayFilm} />
+              <FilmsList filmsList={initialState.filmsList} onPlayFilm={actions.actionPlayFilm} />
             </div>
 
             <div className="catalog__more">
@@ -226,14 +234,5 @@ class App extends Component {
     );
   }
 }
-
-App.defaultProps = {
-  actionPlayFilm: () => {},
-};
-
-App.propTypes = {
-  filmsList: PropTypes.array.isRequired,
-  actionPlayFilm: PropTypes.func,
-};
 
 export default App;

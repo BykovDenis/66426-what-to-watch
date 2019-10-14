@@ -26,7 +26,8 @@ exports[`FilmList correctly renders after relaunch Component should render 1`] =
   >
     <a
       className="small-movie-card__link"
-      href="movie-page.html"
+      href="/film/0"
+      onClick={[Function]}
     >
       Fantastic Beasts: The Crimes of Grindelwald
     </a>
