@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoPlayer correctly renders after relaunch Component should render 1`] = `
+<video
+  autoPlay={true}
+  height={150}
+  poster="../img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+  width={300}
+>
+  <source
+    src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+  />
+</video>
+`;
