@@ -4,6 +4,8 @@ exports[`FilmList correctly renders after relaunch Component should render 1`] =
 Array [
   <article
     className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <button
       className="small-movie-card__play-btn"
@@ -36,6 +38,8 @@ Array [
   </article>,
   <article
     className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <button
       className="small-movie-card__play-btn"
@@ -68,6 +72,8 @@ Array [
   </article>,
   <article
     className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <button
       className="small-movie-card__play-btn"
@@ -100,6 +106,8 @@ Array [
   </article>,
   <article
     className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <button
       className="small-movie-card__play-btn"
@@ -132,6 +140,8 @@ Array [
   </article>,
   <article
     className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <button
       className="small-movie-card__play-btn"

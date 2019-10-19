@@ -13,6 +13,7 @@ const FilmsList = ({ filmsList, onPlayFilm }) => {
             id={film.id}
             name={film.name}
             img={film.img}
+            preview={film.preview}
             onPlayFilm={onPlayFilm}
             sourceURL={film.sourceURL}
           />

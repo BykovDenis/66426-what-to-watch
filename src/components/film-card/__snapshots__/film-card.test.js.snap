@@ -3,6 +3,8 @@
 exports[`FilmList correctly renders after relaunch Component should render 1`] = `
 <article
   className="small-movie-card catalog__movies-card"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
   <button
     className="small-movie-card__play-btn"
