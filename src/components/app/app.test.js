@@ -5,7 +5,7 @@ import App from './index.jsx';
 
 describe(`App correctly renders after relaunch`, () => {
   const initialState = {
-    filmsList: [
+    moviesList: [
       {
         id: 0,
         name: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -67,7 +67,7 @@ describe(`App correctly renders after relaunch`, () => {
   const tree = renderer
     .create(
       <MemoryRouter initialEntries={['/']}>
-        <App filmsList={initialState.filmsList} />
+        <App moviesList={initialState.moviesList} />
       </MemoryRouter>
     )
     .toJSON();

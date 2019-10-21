@@ -1,13 +1,13 @@
 import React, { PureComponent, Fragment } from 'react';
-import FilmsList from '../films-list/index.jsx';
-import filmsList from '../../mocks/films';
+import MoviesList from '../movies-list/index.jsx';
+import moviesList from '../../mocks/movies';
 
 const initialState = {
-  filmsList,
+  moviesList,
 };
 
 const actions = {
-  actionPlayFilm: () => {},
+  actionPlayMovie: () => {},
 };
 
 class App extends PureComponent {
@@ -206,7 +206,7 @@ class App extends PureComponent {
               </li>
             </ul>
             <div className="catalog__movies-list">
-              <FilmsList filmsList={initialState.filmsList} onPlayFilm={actions.actionPlayFilm} />
+              <MoviesList moviesList={initialState.moviesList} onPlayMovie={actions.actionPlayMovie} />
             </div>
 
             <div className="catalog__more">

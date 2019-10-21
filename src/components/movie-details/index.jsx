@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import filmsList from '../../mocks/films';
+import moviesList from '../../mocks/movies';
+import Tabs from '../tabs/index.jsx';
 
-function FilmDetails(props) {
-  const { id } = props.match && props.match.params;
+function MovieDetails(props) {
+  const { id = 0 } = props.match && props.match.params;
 
-  const filmDetails = filmsList.find(film => parseInt(film.id, 10) === parseInt(id, 10));
-  if (filmDetails) {
-    const { img } = filmDetails;
+  const movieDetails = moviesList.find(movie => parseInt(movie.id, 10) === parseInt(id, 10));
+  if (movieDetails) {
+    const { img } = movieDetails;
     return (
       <Fragment>
         <div className="visually-hidden">
@@ -87,7 +88,7 @@ function FilmDetails(props) {
         <section className="movie-card movie-card--full">
           <div className="movie-card__hero">
             <div className="movie-card__bg">
-              <img src={`../img/${img.fileName}.${img.extension}`} alt={filmDetails.fileName} />
+              <img src={`../img/${img.fileName}.${img.extension}`} alt={movieDetails.fileName} />
             </div>
             <h1 className="visually-hidden">WTW</h1>
 
@@ -109,10 +110,10 @@ function FilmDetails(props) {
 
             <div className="movie-card__wrap">
               <div className="movie-card__desc">
-                <h2 className="movie-card__title">{filmDetails.name}</h2>
+                <h2 className="movie-card__title">{movieDetails.name}</h2>
                 <p className="movie-card__meta">
-                  <span className="movie-card__genre">{filmDetails.genre}</span>
-                  <span className="movie-card__year">{filmDetails.yearPublish}</span>
+                  <span className="movie-card__genre">{movieDetails.genre}</span>
+                  <span className="movie-card__year">{movieDetails.yearPublish}</span>
                 </p>
 
                 <div className="movie-card__buttons">
@@ -141,33 +142,14 @@ function FilmDetails(props) {
               <div className="movie-card__poster movie-card__poster--big">
                 <img
                   src={`../img/${img.fileName}.${img.extension}`}
-                  alt={filmDetails.filename}
+                  alt={movieDetails.filename}
                   width="218"
                   height="327"
                 />
               </div>
 
               <div className="movie-card__desc">
-                <nav className="movie-nav movie-card__nav">
-                  <ul className="movie-nav__list">
-                    <li className="movie-nav__item">
-                      <a href="#" className="movie-nav__link">
-                        Overview
-                      </a>
-                    </li>
-                    <li className="movie-nav__item movie-nav__item--active">
-                      <a href="#" className="movie-nav__link">
-                        Details
-                      </a>
-                    </li>
-                    <li className="movie-nav__item">
-                      <a href="#" className="movie-nav__link">
-                        Reviews
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-
+                <Tabs />
                 <div className="movie-card__text movie-card__row">
                   <div className="movie-card__text-col">
                     <p className="movie-card__details-item">
@@ -301,8 +283,8 @@ function FilmDetails(props) {
   return null;
 }
 
-FilmDetails.propTypes = {
+MovieDetails.propTypes = {
   match: PropTypes.object,
 };
 
-export default FilmDetails;
+export default MovieDetails;

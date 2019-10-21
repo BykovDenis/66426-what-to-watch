@@ -1,12 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
-import FilmList from './index.jsx';
+import MovieList from './index.jsx';
 
-describe(`FilmList correctly renders after relaunch`, () => {
+describe(`MovieList correctly renders after relaunch`, () => {
   const props = {
-    onPlayFilm: jest.fn(),
-    filmsList: [
+    onPlayMovie: jest.fn(),
+    moviesList: [
       {
         id: 0,
         name: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -67,8 +67,8 @@ describe(`FilmList correctly renders after relaunch`, () => {
 
   const tree = renderer
     .create(
-      <MemoryRouter initialEntries={['/film/0']}>
-        <FilmList {...props} />
+      <MemoryRouter initialEntries={['/movie/0']}>
+        <MovieList {...props} />
       </MemoryRouter>
     )
     .toJSON();

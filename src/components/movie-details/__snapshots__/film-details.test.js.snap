@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FilmDetails correctly renders after relaunch Component should render 1`] = `
+exports[`MovieDetails correctly renders after relaunch Component should render 1`] = `
 Array [
   <div
     className="visually-hidden"

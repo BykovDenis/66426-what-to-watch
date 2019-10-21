@@ -8,7 +8,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 it(`App correctly renders after relaunch`, () => {
   const initialState = {
-    filmsList: [
+    moviesList: [
       {
         name: `Fantastic Beasts: The Crimes of Grindelwald`,
         sourceURL: `movie-page.html`,
@@ -65,7 +65,7 @@ it(`App correctly renders after relaunch`, () => {
   const clickHandler = jest.fn();
   const app = mount(
     <MemoryRouter initialEntries={['/']}>
-      <App filmsList={initialState.filmsList} actionPlayFilm={clickHandler} />
+      <App moviesList={initialState.moviesList} actionPlayMovie={clickHandler} />
     </MemoryRouter>
   );
 
