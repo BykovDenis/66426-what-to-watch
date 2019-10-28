@@ -4,12 +4,12 @@ module.exports = {
   entry: `./src/index.js`,
   output: {
     filename: `bundle.js`,
-    path: path.join(__dirname, `public`)
+    path: path.join(__dirname, `public`),
   },
   devServer: {
     contentBase: path.join(__dirname, `public`),
     compress: false,
-    port: 8080,
+    port: 8081,
   },
   module: {
     rules: [
@@ -19,8 +19,8 @@ module.exports = {
         use: {
           loader: `babel-loader`,
         },
-      }
+      },
     ],
   },
-  devtool: `source-map`
+  devtool: `source-map`,
 };

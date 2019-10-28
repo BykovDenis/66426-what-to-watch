@@ -425,139 +425,157 @@ Array [
   <div
     className="page-content"
   >
-    <section
-      className="catalog catalog--like-this"
+    <div
+      className="catalog__movies-list"
     >
-      <h2
-        className="catalog__title"
+      <article
+        className="small-movie-card catalog__movies-card"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
-        More like this
-      </h2>
-      <div
-        className="catalog__movies-list"
+        <button
+          className="small-movie-card__play-btn"
+          onClick={[Function]}
+          type="button"
+        >
+          Play
+        </button>
+        <div
+          className="small-movie-card__image"
+        >
+          <img
+            alt="Fantastic Beasts: The Crimes of Grindelwald"
+            height={175}
+            src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+            width={280}
+          />
+        </div>
+        <h3
+          className="small-movie-card__title"
+        >
+          <a
+            className="small-movie-card__link"
+            href="/movie/movie/0"
+            onClick={[Function]}
+          >
+            Fantastic Beasts: The Crimes of Grindelwald
+          </a>
+        </h3>
+      </article>
+      <article
+        className="small-movie-card catalog__movies-card"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
-        <article
-          className="small-movie-card catalog__movies-card"
+        <button
+          className="small-movie-card__play-btn"
+          onClick={[Function]}
+          type="button"
         >
-          <button
-            className="small-movie-card__play-btn"
-            type="button"
-          >
-            Play
-          </button>
-          <div
-            className="small-movie-card__image"
-          >
-            <img
-              alt="Fantastic Beasts: The Crimes of Grindelwald"
-              height="175"
-              src="../img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              Fantastic Beasts: The Crimes of Grindelwald
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
+          Play
+        </button>
+        <div
+          className="small-movie-card__image"
         >
-          <button
-            className="small-movie-card__play-btn"
-            type="button"
-          >
-            Play
-          </button>
-          <div
-            className="small-movie-card__image"
-          >
-            <img
-              alt="Bohemian Rhapsody"
-              height="175"
-              src="../img/bohemian-rhapsody.jpg"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              Bohemian Rhapsody
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
+          <img
+            alt="Bohemian Rhapsody"
+            height={175}
+            src="img/bohemian-rhapsody.jpg"
+            width={280}
+          />
+        </div>
+        <h3
+          className="small-movie-card__title"
         >
-          <button
-            className="small-movie-card__play-btn"
-            type="button"
+          <a
+            className="small-movie-card__link"
+            href="/movie/movie/1"
+            onClick={[Function]}
           >
-            Play
-          </button>
-          <div
-            className="small-movie-card__image"
-          >
-            <img
-              alt="Macbeth"
-              height="175"
-              src="../img/macbeth.jpg"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              Macbeth
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
+            Bohemian Rhapsody
+          </a>
+        </h3>
+      </article>
+      <article
+        className="small-movie-card catalog__movies-card"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <button
+          className="small-movie-card__play-btn"
+          onClick={[Function]}
+          type="button"
         >
-          <button
-            className="small-movie-card__play-btn"
-            type="button"
+          Play
+        </button>
+        <div
+          className="small-movie-card__image"
+        >
+          <img
+            alt="Macbeth"
+            height={175}
+            src="img/macbeth.jpg"
+            width={280}
+          />
+        </div>
+        <h3
+          className="small-movie-card__title"
+        >
+          <a
+            className="small-movie-card__link"
+            href="/movie/movie/2"
+            onClick={[Function]}
           >
-            Play
-          </button>
-          <div
-            className="small-movie-card__image"
+            Macbeth
+          </a>
+        </h3>
+      </article>
+      <article
+        className="small-movie-card catalog__movies-card"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <button
+          className="small-movie-card__play-btn"
+          onClick={[Function]}
+          type="button"
+        >
+          Play
+        </button>
+        <div
+          className="small-movie-card__image"
+        >
+          <img
+            alt="Aviator"
+            height={175}
+            src="img/aviator.jpg"
+            width={280}
+          />
+        </div>
+        <h3
+          className="small-movie-card__title"
+        >
+          <a
+            className="small-movie-card__link"
+            href="/movie/movie/3"
+            onClick={[Function]}
           >
-            <img
-              alt="Aviator"
-              height="175"
-              src="../img/aviator.jpg"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              Aviator
-            </a>
-          </h3>
-        </article>
-      </div>
-    </section>
+            Aviator
+          </a>
+        </h3>
+      </article>
+    </div>
+    <div
+      className="catalog__more"
+    >
+      <button
+        className="catalog__button"
+        onClick={[Function]}
+        type="button"
+      >
+        Show more
+      </button>
+    </div>
     <footer
       className="page-footer"
     >

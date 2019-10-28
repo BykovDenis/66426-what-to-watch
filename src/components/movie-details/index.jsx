@@ -5,14 +5,18 @@ import Tabs from '../tabs/index.jsx';
 import MoviePageDetails from '../movie-page-details/index.jsx';
 import MoviePageOverview from '../movie-page-overview/index.jsx';
 import MoviePageReviews from '../movie-page-reviews/index.jsx';
+import OtherMoviesList from '../other-movies-list/index.jsx';
 
 class MovieDetails extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       tabActive: 0,
+      indexFilm: 0,
+      otherMoviesList: moviesList.slice(0, 4),
     };
     this.tabActiveChangeHandler = this.tabActiveChangeHandler.bind(this);
+    this.btnShowMoreClickHandler = this.btnShowMoreClickHandler.bind(this);
   }
 
   tabActiveChangeHandler(newTabActiveIndex) {
@@ -21,9 +25,20 @@ class MovieDetails extends PureComponent {
     });
   }
 
+  btnShowMoreClickHandler() {
+    let { otherMoviesList, indexFilm } = this.state;
+    otherMoviesList = [...otherMoviesList, ...moviesList.slice(indexFilm, 4)];
+    indexFilm += 4;
+    this.setState({ otherMoviesList, indexFilm });
+  }
+
   render() {
     const { props } = this;
     const { id = 0 } = props.match && props.match.params;
+
+    const actions = {
+      actionPlayMovie: () => {},
+    };
 
     const movieDetails = moviesList.find(movie => parseInt(movie.id, 10) === parseInt(id, 10));
     if (movieDetails) {
@@ -178,72 +193,16 @@ class MovieDetails extends PureComponent {
           </section>
 
           <div className="page-content">
-            <section className="catalog catalog--like-this">
-              <h2 className="catalog__title">More like this</h2>
-
-              <div className="catalog__movies-list">
-                <article className="small-movie-card catalog__movies-card">
-                  <button className="small-movie-card__play-btn" type="button">
-                    Play
-                  </button>
-                  <div className="small-movie-card__image">
-                    <img
-                      src="../img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-                      alt="Fantastic Beasts: The Crimes of Grindelwald"
-                      width="280"
-                      height="175"
-                    />
-                  </div>
-                  <h3 className="small-movie-card__title">
-                    <a className="small-movie-card__link" href="movie-page.html">
-                      Fantastic Beasts: The Crimes of Grindelwald
-                    </a>
-                  </h3>
-                </article>
-
-                <article className="small-movie-card catalog__movies-card">
-                  <button className="small-movie-card__play-btn" type="button">
-                    Play
-                  </button>
-                  <div className="small-movie-card__image">
-                    <img src="../img/bohemian-rhapsody.jpg" alt="Bohemian Rhapsody" width="280" height="175" />
-                  </div>
-                  <h3 className="small-movie-card__title">
-                    <a className="small-movie-card__link" href="movie-page.html">
-                      Bohemian Rhapsody
-                    </a>
-                  </h3>
-                </article>
-
-                <article className="small-movie-card catalog__movies-card">
-                  <button className="small-movie-card__play-btn" type="button">
-                    Play
-                  </button>
-                  <div className="small-movie-card__image">
-                    <img src="../img/macbeth.jpg" alt="Macbeth" width="280" height="175" />
-                  </div>
-                  <h3 className="small-movie-card__title">
-                    <a className="small-movie-card__link" href="movie-page.html">
-                      Macbeth
-                    </a>
-                  </h3>
-                </article>
-
-                <article className="small-movie-card catalog__movies-card">
-                  <button className="small-movie-card__play-btn" type="button">
-                    Play
-                  </button>
-                  <div className="small-movie-card__image">
-                    <img src="../img/aviator.jpg" alt="Aviator" width="280" height="175" />
-                  </div>
-                  <h3 className="small-movie-card__title">
-                    <a className="small-movie-card__link" href="movie-page.html">
-                      Aviator
-                    </a>
-                  </h3>
-                </article>
-              </div>
-            </section>
+            <div className="catalog__movies-list">
+              <OtherMoviesList moviesList={this.state.otherMoviesList} onPlayMovie={actions.actionPlayMovie} />
+            </div>
+            <div className="catalog__more">
+              {this.state.indexFilm < moviesList.length - 1 && (
+                <button className="catalog__button" type="button" onClick={this.btnShowMoreClickHandler}>
+                  Show more
+                </button>
+              )}
+            </div>
 
             <footer className="page-footer">
               <div className="logo">

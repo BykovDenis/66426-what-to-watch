@@ -3,7 +3,6 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 function Tabs(props) {
-
   const { tabActive } = props;
 
   const overviewStyles = cn({
@@ -24,7 +23,7 @@ function Tabs(props) {
   const tabActiveChangeHandler = evt => {
     const element = evt.target;
     props.onTabActiveChange(parseInt(element.dataset.name, 10));
-  }
+  };
 
   return (
     <nav className="movie-nav movie-card__nav">

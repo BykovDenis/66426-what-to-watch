@@ -27,6 +27,7 @@ MoviesList.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       sourceURL: PropTypes.string.isRequired,
+      preview: PropTypes.string.isRequired,
       img: PropTypes.shape({
         fileName: PropTypes.string.isRequired,
         extension: PropTypes.string.isRequired,
