@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FilmList correctly renders after relaunch Component should render 1`] = `
+exports[`MovieList correctly renders after relaunch Component should render 1`] = `
 <article
   className="small-movie-card catalog__movies-card"
   onMouseEnter={[Function]}
@@ -28,7 +28,7 @@ exports[`FilmList correctly renders after relaunch Component should render 1`] =
   >
     <a
       className="small-movie-card__link"
-      href="/film/0"
+      href="/movie/0"
       onClick={[Function]}
     >
       Fantastic Beasts: The Crimes of Grindelwald

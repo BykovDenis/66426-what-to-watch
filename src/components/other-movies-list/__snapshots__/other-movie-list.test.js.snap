@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FilmList correctly renders after relaunch Component should render 1`] = `
+exports[`MovieDetails correctly renders after relaunch Component should render 1`] = `
 Array [
   <article
     className="small-movie-card catalog__movies-card"
@@ -29,7 +29,7 @@ Array [
     >
       <a
         className="small-movie-card__link"
-        href="/film/film/0"
+        href="/movie/movie/0"
         onClick={[Function]}
       >
         Fantastic Beasts: The Crimes of Grindelwald
@@ -63,7 +63,7 @@ Array [
     >
       <a
         className="small-movie-card__link"
-        href="/film/film/1"
+        href="/movie/movie/1"
         onClick={[Function]}
       >
         Bohemian Rhapsody
@@ -97,7 +97,7 @@ Array [
     >
       <a
         className="small-movie-card__link"
-        href="/film/film/2"
+        href="/movie/movie/2"
         onClick={[Function]}
       >
         Macbeth
@@ -131,7 +131,7 @@ Array [
     >
       <a
         className="small-movie-card__link"
-        href="/film/film/3"
+        href="/movie/movie/3"
         onClick={[Function]}
       >
         Aviator
@@ -165,7 +165,7 @@ Array [
     >
       <a
         className="small-movie-card__link"
-        href="/film/film/4"
+        href="/movie/movie/4"
         onClick={[Function]}
       >
         We need to talk about Kevin

@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
-import FilmDetails from './index.jsx';
+import MovieDetails from './index.jsx';
 
-describe(`FilmDetails correctly renders after relaunch`, () => {
+describe(`MovieDetails correctly renders after relaunch`, () => {
   const props = {
     match: {
       params: {
@@ -14,8 +14,8 @@ describe(`FilmDetails correctly renders after relaunch`, () => {
 
   const tree = renderer
     .create(
-      <MemoryRouter initialEntries={['/film/0']}>
-        <FilmDetails {...props} />
+      <MemoryRouter initialEntries={['/movie/0']}>
+        <MovieDetails {...props} />
       </MemoryRouter>
     )
     .toJSON();

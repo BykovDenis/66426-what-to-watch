@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import VideoPlayer from '../video-player/index.jsx';
 
-function FilmCard(props) {
+function MovieCard(props) {
   const { img, name, id } = props;
-  const [isFilmPreviewEnable, setFilmPreviewEnable] = useState(false);
+  const [isMoviePreviewEnable, setMoviePreviewEnable] = useState(false);
   const isHoverRef = useRef(false);
   let timer;
 
   const setHoverMouseEnter = () => {
     if (isHoverRef.current) {
-      setFilmPreviewEnable(true);
+      setMoviePreviewEnable(true);
     }
   };
 
@@ -23,15 +23,15 @@ function FilmCard(props) {
   const onMouseLeave = () => {
     clearTimeout(timer);
     isHoverRef.current = false;
-    setFilmPreviewEnable(false);
+    setMoviePreviewEnable(false);
   };
 
   return (
     <article className="small-movie-card catalog__movies-card" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-      {isFilmPreviewEnable && <VideoPlayer preview={props.preview} img={props.img} />}
-      {!isFilmPreviewEnable && (
+      {isMoviePreviewEnable && <VideoPlayer preview={props.preview} img={props.img} />}
+      {!isMoviePreviewEnable && (
         <Fragment>
-          <button className="small-movie-card__play-btn" type="button" onClick={props.onPlayFilm}>
+          <button className="small-movie-card__play-btn" type="button" onClick={props.onPlayMovie}>
             Play
           </button>
           <div className="small-movie-card__image">
@@ -40,7 +40,7 @@ function FilmCard(props) {
             )}
           </div>
           <h3 className="small-movie-card__title">
-            <Link className="small-movie-card__link" to={`film/${id}`}>
+            <Link className="small-movie-card__link" to={`movie/${id}`}>
               {name}
             </Link>
           </h3>
@@ -50,14 +50,14 @@ function FilmCard(props) {
   );
 }
 
-FilmCard.defaultProps = {
+MovieCard.defaultProps = {
   img: {
     width: 280,
     height: 175,
   },
 };
 
-FilmCard.propTypes = {
+MovieCard.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   sourceURL: PropTypes.string.isRequired,
@@ -68,7 +68,7 @@ FilmCard.propTypes = {
     width: PropTypes.number,
     height: PropTypes.number,
   }),
-  onPlayFilm: PropTypes.func.isRequired,
+  onPlayMovie: PropTypes.func.isRequired,
 };
 
-export default FilmCard;
+export default MovieCard;
